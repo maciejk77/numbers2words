@@ -1,5 +1,41 @@
-export function number2words(number) {
-  const decimals = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+import { getMaxListeners } from "cluster";
 
-  return decimals[number];
+export function number2words(number) {
+  const decimals = ['zero', 'one', 'two', 'three', 'four', 
+                    'five', 'six', 'seven', 'eight', 'nine'];
+
+  const foo = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+               'sixteen', 'seventeen', 'eighteen', 'nineteen']
+
+  const tens = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 
+                'sixty', 'seventy', 'eighty', 'ninety'];
+
+  // ==================================
+  
+  
+  if(number === 0) {
+    return 'zero'
+  } else if(number < 10) {
+    return getDecimals(number);
+  } else if(number > 10 && number < 20) {
+    return get11to19(number)
+  }
+
+
+
+  // ==================================
+
+  function getDecimals(n) {
+    return decimals[n];
+  }
+
+  function get11to19(n) {
+    return foo[(n % 10) - 1]
+  }
+
+  // function getTens(n) {
+  //   return Math.floor(n / 10);
+  // }
+
+
 }
