@@ -1,6 +1,6 @@
 import { number2words } from './App';
 
-describe('Numbers to be replaced with matching word/s', () => {
+describe('0-9 Numbers to matching word/s', () => {
 
   it('should output ZERO, when 0 provided', () => {
     expect(number2words(0)).toBe('zero');
@@ -18,7 +18,10 @@ describe('Numbers to be replaced with matching word/s', () => {
     expect(number2words(9)).toBe('nine');
   })
 
-  // ============================
+})
+
+
+describe('11-19 Numbers to matching word/s', () => {
 
   it('should output TWELVE, when 12 provided', () => {
     expect(number2words(12)).toBe('twelve');
@@ -32,6 +35,10 @@ describe('Numbers to be replaced with matching word/s', () => {
     expect(number2words(19)).toBe('nineteen');
   })
 
+})
+
+describe('10,20, ...90 Numbers to matching word/s', () => {
+
   it('should output TWENTY, when 20 provided', () => {
     expect(number2words(20)).toBe('twenty');
   })
@@ -44,18 +51,24 @@ describe('Numbers to be replaced with matching word/s', () => {
     expect(number2words(90)).toBe('ninety');
   })
 
-  // ============================
+})
+
+describe('21-99 Mixed Numbers to matching word/s', () => {
 
   it('should output TWENTY TWO, when 22 provided', () => {
-    expect(number2words(12)).toBe('twenty two');
+    expect(number2words(22)).toBe('twenty two');
   })
 
   it('should output THIRTY SEVEN, when 37 provided', () => {
-    expect(number2words(16)).toBe('thirty seven');
+    expect(number2words(37)).toBe('thirty seven');
   })
 
   it('should output EIGHTY NINE, when 89 provided', () => {
-    expect(number2words(20)).toBe('eighty nine');
+    expect(number2words(89)).toBe('eighty nine');
+  })
+ 
+  it('should output NINETY NINE, when 99 provided', () => {
+    expect(number2words(99)).toBe('ninety nine');
   })
 
 })
