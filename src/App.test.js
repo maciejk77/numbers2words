@@ -75,18 +75,18 @@ describe('21-99 mixed numbers to matching word/s', () => {
 
 })
 
-// describe('100-900 mutiple hundred numbers to matching word/s', () => {
+describe('100-900 mutiple hundred numbers to matching word/s', () => {
 
-//   it('should output HUNDRED, when 100 provided', () => {
-//     expect(number2words(100)).toBe('one hundred');
-//   })
+  it('should output HUNDRED, when 100 provided', () => {
+    expect(number2words(100)).toBe('one hundred');
+  })
 
-//   it('should output FIVE HUNDRED, when 500 provided', () => {
-//     expect(number2words(500)).toBe('five hundred');
-//   })
+  it('should output FIVE HUNDRED, when 500 provided', () => {
+    expect(number2words(500)).toBe('five hundred');
+  })
  
-//   it('should output NINE HUNDRED, when 900 provided', () => {
-//     expect(number2words(900)).toBe('nine hundred');
-//   })
+  it('should output NINE HUNDRED, when 900 provided', () => {
+    expect(number2words(900)).toBe('nine hundred');
+  })
 
-// })
+})
