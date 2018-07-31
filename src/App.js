@@ -7,30 +7,31 @@ export function number2words(number) {
   // ==================================
   
   if(number === 0) return 'zero'
-  if(number < 10) return getDigit(number);
+  if(number < 10) return getDigit(number)
   
   if(number > 10 && number < 20) {
     return getTeens(number)
   } else {
-    return getHundreds(number);
+    return getHundreds(number)
   }
 
   // ==================================
 
   function getHundreds(n) {
-    const condition = digits[Math.floor(n / 100)];
+    const condition = digits[Math.floor(n / 100)]
   
-    if(n % 100 === n) return getTens(n);
-    if(n % 100 === 0) return condition + ' hundred';
+    if(n % 100 === n) return getTens(n)
+    if(n % 100 === 0) return condition + ' hundred'
     return condition + ' hundred ' + getTens(n % 100)
   }
 
   function getTens(n) {
     const condition = tens[Math.floor((n / 10) - 1)];
     
-    if(n % 10 === n) return getDigit(n);
+    if(n % 10 === n) return getDigit(n)
     if(n % 10 === 0) return condition
     return condition + ' ' + getDigit(n % 10)
+    
   }
 
   function getTeens(n) {
@@ -38,7 +39,7 @@ export function number2words(number) {
   }
 
   function getDigit(n) {
-    return digits[n];
+    return digits[n]
   }
 
 }

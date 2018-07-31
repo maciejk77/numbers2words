@@ -90,3 +90,19 @@ describe('100-900 mutiple hundred numbers to matching word/s', () => {
   })
 
 })
+
+describe('100-999 mixed hundred numbers to matching word/s', () => {
+
+  it('should output ONE HUNDRED ONE when 101 provided', () => {
+    expect(number2words(101)).toBe('one hundred one');
+  })
+
+  it('should output THREE HUNDRED TWELVE, when 312 provided', () => {
+    expect(number2words(312)).toBe('three hundred twelve');
+  })
+ 
+  it('should output SIX HUNDRED NINTY NINE, when 699 provided', () => {
+    expect(number2words(699)).toBe('six hundred ninety nine');
+  })
+
+})
