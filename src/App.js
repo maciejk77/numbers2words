@@ -28,13 +28,9 @@ export function number2words(number) {
   function getTens(n) {
     const condition = tens[Math.floor((n / 10) - 1)];
     
-    if(n % 10 === n) { 
-      getDigit(n)
-    } else if(n % 10 === 0) {
-      return condition
-    } else {
-      return condition + ' ' + getDigit(n % 10)
-    }
+    if(n % 10 === n) return getDigit(n);
+    if(n % 10 === 0) return condition
+    return condition + ' ' + getDigit(n % 10)
   }
 
   function getTeens(n) {
