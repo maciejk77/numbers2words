@@ -17,4 +17,4 @@ This exercise is to come up with an algorithm flexible enough to turn number in 
 - refactoring needed (increased complexity) over 1000, and need to DRY, recursion?
 
 ## Screenshot
-![Screenshot](public/screenshot.png)
+![Screenshot](public/screenshot.png=66%)
