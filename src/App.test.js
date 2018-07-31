@@ -28,6 +28,10 @@ describe('Numbers to be replaced with matching word/s', () => {
     expect(number2words(16)).toBe('sixteen');
   })
 
+  it('should output NINETEEN, when 19 provided', () => {
+    expect(number2words(19)).toBe('nineteen');
+  })
+
   it('should output TWENTY, when 20 provided', () => {
     expect(number2words(20)).toBe('twenty');
   })
