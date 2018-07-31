@@ -1,6 +1,6 @@
 import { number2words } from './App';
 
-describe('0-9 Numbers to matching word/s', () => {
+describe('0-9 numbers to matching word/s', () => {
 
   it('should output ZERO, when 0 provided', () => {
     expect(number2words(0)).toBe('zero');
@@ -21,7 +21,7 @@ describe('0-9 Numbers to matching word/s', () => {
 })
 
 
-describe('11-19 Numbers to matching word/s', () => {
+describe('11-19 numbers to matching word/s', () => {
 
   it('should output TWELVE, when 12 provided', () => {
     expect(number2words(12)).toBe('twelve');
@@ -37,7 +37,8 @@ describe('11-19 Numbers to matching word/s', () => {
 
 })
 
-describe('10,20, ...90 Numbers to matching word/s', () => {
+
+describe('10,20, ...90 numbers to matching word/s', () => {
 
   it('should output TWENTY, when 20 provided', () => {
     expect(number2words(20)).toBe('twenty');
@@ -53,7 +54,8 @@ describe('10,20, ...90 Numbers to matching word/s', () => {
 
 })
 
-describe('21-99 Mixed Numbers to matching word/s', () => {
+
+describe('21-99 mixed numbers to matching word/s', () => {
 
   it('should output TWENTY TWO, when 22 provided', () => {
     expect(number2words(22)).toBe('twenty two');
@@ -72,3 +74,19 @@ describe('21-99 Mixed Numbers to matching word/s', () => {
   })
 
 })
+
+// describe('100-900 mutiple hundred numbers to matching word/s', () => {
+
+//   it('should output HUNDRED, when 100 provided', () => {
+//     expect(number2words(100)).toBe('one hundred');
+//   })
+
+//   it('should output FIVE HUNDRED, when 500 provided', () => {
+//     expect(number2words(500)).toBe('five hundred');
+//   })
+ 
+//   it('should output NINE HUNDRED, when 900 provided', () => {
+//     expect(number2words(900)).toBe('nine hundred');
+//   })
+
+// })

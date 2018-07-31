@@ -1,21 +1,15 @@
 export function number2words(number) {
-  const digits = [null, 'one', 'two', 'three', 'four', 
-                    'five', 'six', 'seven', 'eight', 'nine'];
 
-  const teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 
-                        'sixteen', 'seventeen', 'eighteen', 'nineteen']
-
-  const tens = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 
-                'sixty', 'seventy', 'eighty', 'ninety'];
+  const digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  const tens = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
   // ==================================
-
   
-  if(number === 0) {
-    return 'zero'
-  } else if(number < 10) {
-    return getDigit(number);
-  } else if(number > 10 && number < 20) {
+  if(number === 0) return 'zero'
+  if(number < 10) return getDigit(number);
+  
+  if(number > 10 && number < 20) {
     return getTeens(number)
   } else {
     return getTens(number);
