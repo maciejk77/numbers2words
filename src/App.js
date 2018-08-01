@@ -7,38 +7,51 @@ export function number2words(number) {
   // ==================================
   
   if(number === 0) return 'zero'
-  if(number < 10) return getDigit(number)
+  if(number < 10) return get_digit(number)
   
-  if(number > 10 && number < 20) {
-    return getTeens(number)
+  if(is_teen(number)) {
+    return get_teens(number)
   } else {
-    return getHundreds(number)
+    return get_hundreds(number)
   }
 
   // ==================================
 
-  function getHundreds(n) {
-    const condition = digits[Math.floor(n / 100)]
+  function get_hundreds(n) {
+    const word_for_hundreds = digits[Math.floor(n / 100)]
   
-    if(n % 100 === n) return getTens(n)
-    if(n % 100 === 0) return condition + ' hundred'
-    return condition + ' hundred ' + getTens(n % 100)
+    if(n % 100 === n) return get_tens(n)
+    if(n % 100 === 0) return word_for_hundreds + ' hundred'
+    if(n % 100 < 10) return word_for_hundreds + ' hundred ' + get_digit(n % 100)
+    return word_for_hundreds + ' hundred ' + get_tens(n % 100)
   }
 
-  function getTens(n) {
-    const condition = tens[Math.floor((n / 10) - 1)];
-    
-    if(n % 10 === n) return getDigit(n)
-    if(n % 10 === 0) return condition
-    return condition + ' ' + getDigit(n % 10)
-    
+  function get_tens(n) {
+    const word_for_tens = tens[Math.floor((n / 10) - 1)];    
+  
+    if(is_teen(n)) { 
+      return get_teens(n);
+    } else {
+      return (is_multiply_of_10(n)) ? word_for_tens : word_for_tens + ' ' + get_digit(n % 10);
+    }
+
+    if(n % 10 === n) return get_digit(n)
+    if(n % 10 === 0) return word_for_tens
   }
 
-  function getTeens(n) {
+  function is_multiply_of_10(n) {
+    (n % 10 === 0) ? true : false
+  }
+
+  function is_teen(n) {
+    return (n > 10 && n < 20) ? true : false
+  }
+
+  function get_teens(n) {
     return teens[(n % 10) - 1]
   }
 
-  function getDigit(n) {
+  function get_digit(n) {
     return digits[n]
   }
 
