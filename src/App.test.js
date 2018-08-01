@@ -110,3 +110,32 @@ describe('100-999 mixed hundred numbers to matching word/s', () => {
   })
 
 })
+
+describe('1000-9999 mixed hundred numbers to matching word/s', () => {
+
+  it('should output ONE THOUSAND ONE when 1001 provided', () => {
+    expect(number2words(1001)).toBe('one thousand one');
+  })
+
+  it('should output THREE THOUSAND HUNDRED TWELVE, when 3012 provided', () => {
+    expect(number2words(3012)).toBe('three thousand twelve');
+  })
+ 
+  it('should output SIX THOUSAND NINTY NINE, when 6099 provided', () => {
+    expect(number2words(6099)).toBe('six thousand ninety nine');
+  })
+
+  it('should output NINE THOUSAND NINE HUNDRED NINTY NINE, when 9999 provided', () => {
+    expect(number2words(9999)).toBe('nine thousand nine hundred ninety nine');
+  })
+
+  it('should output ONE THOUSAND TWO HUNDRED THIRTY FOUR, when 1234 provided', () => {
+    expect(number2words(1234)).toBe('one thousand two hundred thirty four');
+  })
+
+  it('should output SIX THOUSAND SEVEN HUNDRED EIGHTY NINE, when 6789 provided', () => {
+    expect(number2words(6789)).toBe('six thousand seven hundred eighty nine');
+  })
+
+
+})

@@ -12,10 +12,20 @@ export function number2words(number) {
   if(is_teen(number)) {
     return get_teens(number)
   } else {
-    return get_hundreds(number)
+    // return get_hundreds(number)
+    return get_thousands(number)
   }
 
   // ==================================
+
+  function get_thousands(n) {
+    const word_for_thousands = digits[Math.floor(n / 1000)]
+
+    if( is_lower_than_denominator(n, 1000) ) return get_hundreds(n)
+    if( is_multiply_of(n, 1000) ) return word_for_thousands + ' thousand'
+    if(n % 1000 < 10) return word_for_thousands + ' thousand ' + get_digit(n % 1000)
+    return word_for_thousands + ' thousand ' + get_hundreds(n % 1000)
+  }
 
   function get_hundreds(n) {
     const word_for_hundreds = digits[Math.floor(n / 100)]
