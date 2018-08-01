@@ -39,10 +39,6 @@ export function number2words(number) {
     if(n % 10 === 0) return word_for_tens
   }
 
-  function is_multiply_of_10(n) {
-    (n % 10 === 0) ? true : false
-  }
-
   function is_teen(n) {
     return (n > 10 && n < 20) ? true : false
   }
