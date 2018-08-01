@@ -117,8 +117,8 @@ describe('1000-9999 mixed hundred numbers to matching word/s', () => {
     expect(number2words(1001)).toBe('one thousand one');
   })
 
-  it('should output THREE THOUSAND HUNDRED TWELVE, when 3012 provided', () => {
-    expect(number2words(3012)).toBe('three thousand twelve');
+  it('should output THREE THOUSAND HUNDRED TWELVE, when 3112 provided', () => {
+    expect(number2words(3112)).toBe('three thousand one hundred twelve');
   })
  
   it('should output SIX THOUSAND NINTY NINE, when 6099 provided', () => {
@@ -137,5 +137,28 @@ describe('1000-9999 mixed hundred numbers to matching word/s', () => {
     expect(number2words(6789)).toBe('six thousand seven hundred eighty nine');
   })
 
+})
+
+describe('10.000-99.999 mixed hundred numbers to matching word/s', () => {
+
+  it('should output TWELVE THOUSAND THREE HUNDRED FOURTY FIVE, when 12.345 provided', () => {
+    expect(number2words(12345)).toBe('twelve thousand three hundred fourty five');
+  })
+
+  it('should output SIXTY SEVEN THOUSAND EIGHT HUNDRED NINETY, when 67.890 provided', () => {
+    expect(number2words(67890)).toBe('sixty thousand eight hundred ninety');
+  })
+
+  it('should output FIFTY THOUSAND, when 50.000 provided', () => {
+    expect(number2words(50000)).toBe('fifty thousand');
+  })
+
+  it('should output EIGHTY THOUSAND FIVE, when 80.005 provided', () => {
+    expect(number2words(80005)).toBe('eighty thousand five');
+  })
+
+  it('should output NINETY TWO THOUSAND FIVE HUNDRED SEVENTEEN, when 92.517 provided', () => {
+    expect(number2words(92517)).toBe('ninety two thousand five hundred seventeen');
+  })
 
 })
