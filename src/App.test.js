@@ -105,4 +105,8 @@ describe('100-999 mixed hundred numbers to matching word/s', () => {
     expect(number2words(699)).toBe('six hundred ninety nine');
   })
 
+  it('should output NINE HUNDRED NINTY NINE, when 999 provided', () => {
+    expect(number2words(999)).toBe('nine hundred ninety nine');
+  })
+
 })

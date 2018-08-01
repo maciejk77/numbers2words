@@ -32,7 +32,7 @@ export function number2words(number) {
     if(is_teen(n)) { 
       return get_teens(n);
     } else {
-      return (is_multiply_of_10(n)) ? word_for_tens : word_for_tens + ' ' + get_digit(n % 10);
+      return (n % 10 === 0) ? word_for_tens : word_for_tens + ' ' + get_digit(n % 10);
     }
 
     if(n % 10 === n) return get_digit(n)
