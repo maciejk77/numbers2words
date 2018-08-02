@@ -146,7 +146,7 @@ describe('10.000-99.999 mixed hundred numbers to matching word/s', () => {
   })
 
   it('should output SIXTY SEVEN THOUSAND EIGHT HUNDRED NINETY, when 67.890 provided', () => {
-    expect(number2words(67890)).toBe('sixty thousand eight hundred ninety');
+    expect(number2words(67890)).toBe('sixty seven thousand eight hundred ninety');
   })
 
   it('should output FIFTY THOUSAND, when 50.000 provided', () => {

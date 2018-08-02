@@ -1,6 +1,6 @@
 export function number2words(number) {
 
-  const digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const digits = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   const teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
   const tens = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
@@ -12,22 +12,20 @@ export function number2words(number) {
   if(is_teen(number)) {
     return get_teens(number)
   } else {
-    // return get_hundreds(number)
-    // return get_thousands(number)
     return get_ten_thousands(number)
   }
 
   // ==================================
   
   function get_ten_thousands(n) {
-    const word_for_ten_thousands = tens[Math.floor((n / 10000) - 1)]  // i.e. get 92 for 92k here, change to /1000
-    //const word_2 = get_tens([Math.floor(word_for_ten_thousands / 10)]) + ' ' + get_digits([Math.floor(word_for_ten_thousands % 10)])
-
+    const word_for_ten_thousands =  tens[Math.floor((n / 10000) - 1)]
+    const thousands = Math.floor(n / 1000)
 
     if( is_lower_than_denominator(n, 10000) ) return get_thousands(n)
     if( is_multiply_of(n, 10000) ) return word_for_ten_thousands + ' thousand'
-    if(n % 10000 < 10) return word_for_ten_thousands + ' thousand ' + get_digit(n % 10000)
-    return word_for_ten_thousands + ' thousand ' + get_hundreds(n % 1000)
+    if( n % 10000 < 10 ) return word_for_ten_thousands + ' thousand ' + get_digit(n % 10000)
+    if( is_teen(n / 1000 )) return get_teens(thousands) + ' thousand ' + get_hundreds(n % 1000)
+    return word_for_ten_thousands + ' ' + get_digit(thousands % 10)  + ' thousand ' + get_hundreds(n % 1000)
   }
 
   function get_thousands(n) {
@@ -35,7 +33,7 @@ export function number2words(number) {
 
     if( is_lower_than_denominator(n, 1000) ) return get_hundreds(n)
     if( is_multiply_of(n, 1000) ) return word_for_thousands + ' thousand'
-    if(n % 1000 < 10) return word_for_thousands + ' thousand ' + get_digit(n % 1000)
+    if( n % 1000 < 10 ) return word_for_thousands + ' thousand ' + get_digit(n % 1000)
     return word_for_thousands + ' thousand ' + get_hundreds(n % 1000)
   }
 
@@ -44,7 +42,7 @@ export function number2words(number) {
   
     if( is_lower_than_denominator(n, 100) ) return get_tens(n)
     if( is_multiply_of(n, 100) ) return word_for_hundreds + ' hundred'
-    if(n % 100 < 10) return word_for_hundreds + ' hundred ' + get_digit(n % 100)
+    if( n % 100 < 10 ) return word_for_hundreds + ' hundred ' + get_digit(n % 100)
     return word_for_hundreds + ' hundred ' + get_tens(n % 100)
   }
 
