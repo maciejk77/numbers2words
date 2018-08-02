@@ -14,7 +14,9 @@ This exercise is to come up with an algorithm flexible enough to turn number in 
 - test coverage and script working for numbers up to 1000
 
 ## To do
-- refactoring needed (increased complexity) over 1000, and need to DRY, recursion?
+- refactoring needed (increased complexity) over 1000
+- repetition of get_ten_thousands(n) / get_thousands(n) / get_hundreds(n) = DRYing needed
+- recursion to create more robust solution
 
 ## Screenshot
 ![Screenshot](public/screenshot.png)
